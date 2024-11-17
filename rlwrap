@@ -1,0 +1,31 @@
+## Instalação do RLWRAP no Oracle Linux 7.9
+--Habilitar o repositório EPEL:
+yum install oracle-epel-release-el7
+
+--Instalando rlwrap:
+yum install rlwrap
+
+--Verificar a instalação:
+rlwrap --version
+
+## Configuração no bash_profile
+--Para facilitar o uso do rlwrap com os comandos sqlplus e rman:
+--Edite o arquivo .bash_profile do usuário Oracle:
+vi ~/.bash_profile
+
+--Adicione os seguintes aliases:
+alias sqlplus='rlwrap sqlplus'
+alias rman='rlwrap rman'
+
+--Recarregue as configurações do bash_profile:
+source ~/.bash_profile
+
+## Teste os Comandos
+--Abra o sqlplus ou rman e teste o histórico:
+sqlplus / as sysdba
+
+ou
+
+rman target /
+
+
