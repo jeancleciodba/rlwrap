@@ -20,6 +20,17 @@ alias rman='rlwrap rman'
 --Recarregue as configurações do bash_profile:
 source ~/.bash_profile
 
+--Use o editor de texto e abra o arquivo .bashrc:
+vi ~/.bashrc
+
+--Adicione as linhas ao final do arquivo:
+# Adicione seu caminho para o rlwrap aqui, se necessário
+export PATH="$PATH:/usr/local/bin" # Substitua por seu caminho
+
+# Aliases para rlwrap
+alias sqlplus='rlwrap sqlplus'
+alias rman='rlwrap rman'
+
 ## Teste os Comandos
 --Abra o sqlplus ou rman e teste o histórico:
 sqlplus / as sysdba
@@ -27,5 +38,3 @@ sqlplus / as sysdba
 ou
 
 rman target /
-
-
